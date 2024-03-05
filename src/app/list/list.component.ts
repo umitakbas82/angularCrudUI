@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EmployeeModelDTO } from '../models/employeeModelDTO';
 
 @Component({
   selector: 'app-list',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
+  employeeList:EmployeeModelDTO[]=[]
+
+  ngOnInit(){
+    
+  }
+  
 
 }
