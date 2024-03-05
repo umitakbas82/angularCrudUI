@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { EmployeeModelDTO } from '../models/employeeModelDTO';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-list',
@@ -9,11 +10,20 @@ import { EmployeeModelDTO } from '../models/employeeModelDTO';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-  employeeList:EmployeeModelDTO[]=[]
-
-  ngOnInit(){
-    
-  }
+  employeeList:any
   
+  ngOnInit(){
+this.getDataList();
+  }
+
+  constructor(public services:DataService){}
+  
+  getDataList(){
+    this.services.getAllData().subscribe(resp=>{      
+      this.employeeList=resp
+      console.log(this.employeeList)
+    })
+  }
+
 
 }
