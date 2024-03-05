@@ -1,16 +1,20 @@
 import { Component, inject } from '@angular/core';
 import { EmployeeModelDTO } from '../models/employeeModelDTO';
 import { DataService } from '../service/data.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
 export class ListComponent {
   employeeList:any
+
   
   ngOnInit(){
 this.getDataList();

@@ -1,1 +1,18 @@
 
+
+<div class="container">
+    @for(data of employeeList; track data){
+        <div class="container my-5" >
+            <div class="card">
+                <div class="card-body" >
+                    
+        <p>{{data.name}}|  {{data.email}}</p>
+        <p>| {{data.phone}}|{{data.salary}}</p>          
+                   
+                    
+                </div>
+            </div>
+        </div>
+    }
+    
+</div>
